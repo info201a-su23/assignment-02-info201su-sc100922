@@ -96,7 +96,8 @@ I think the number of protests in Washington surprises me a lot. Because it is r
 **(R3b)**
 Using the sapply() function is surprised me since it is power to simplifies the process of applying a function to multiple elements by automatically iterating over the elements and returning the results as a vector or matrix. It saves me a lot  of time.
 
-* **(R3c)** ... (about 25-50 words)
+**(R3c)**
+I notice there are some outliers in the table that have very low numbers such as CE and TE only have 1. We can use data cleaning and exclude them to avoid bias.
 
 
 # 3. Critical Analysis & Reflection: After You Code
