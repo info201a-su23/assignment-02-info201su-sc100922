@@ -114,7 +114,7 @@ In the second chapter of *Data Feminism*, Klein and D'Ignazio describe 4 ways th
 Count Love embodies the point of collection. This dataset records many informal, neglected protests, which can be used as cited evidence to support the article's claims. Count Love also embody analysis because it contains many datasets on protests that have a lot to do with inequality and human rights. Therefore, through these data, people can learn about the injustices of different races and challenge authority. Count Love can also serve as a platform to stimulate people's interest in data collection, let more people know the significance and value of this action, play a teaching role, train more data scientists, and devote themselves to the road of calling for equality and justice.
 
 **(R1i)** What is the most interesting or surprising thing you learned from this analysis? Please answer in at least 2-3 sentences (2 points)
-
+I think data analysis is a meaningful thing. In the past, my data analysis was limited to mathematical analysis, and it was rigorous. And now I think that analysis can be linked to other aspects of life such as ethics, which is amazing to me.
 
 **(R1j)** What is a kind of analysis that you would like to do or that would be interesting to do with the CountLove data that you don't have the time or skills to accomplish at this moment? Please answer in at least 2-3 sentences (2 points)
 
