@@ -192,7 +192,7 @@ log_attendees_distribution <- boxplot(log(na.omit(num_attendees)), plot = TRUE)
 # In this part, you will explore where the protests happened.
 
 # 3a: Extract the `Location` column. (Variable: `locations`)
-locations <- protests$Location
+locations <- toupper(protests$Location)
 
 # 3b: How many *unique* locations are in the dataset? (Variable: `num_locations`)
 num_locations <- length(unique(locations, na.rm = TRUE))
@@ -236,17 +236,17 @@ count_in_location <- function(location) {
   }
 }
 
-wa_summary <- count_in_location("Seattle, WA")
+wa_summary <- count_in_location(toupper("Seattle, WA"))
 
 # 3f: Use your function above to compute the number of protests in "Washington, DC". (Variable: `dc_summary`)
-dc_summary <- count_in_location("Washington, DC")
+dc_summary <- count_in_location(toupper("Washington, DC"))
 
 # 3g: Use your function above to compute the number of protests in "Minneapolis". (Variable: `minneapolis_summary`)
-minneapolis_summary <- count_in_location("Minneapolis")
+minneapolis_summary <- count_in_location(toupper("Minneapolis"))
 
 # 3h: Use your function above to demonstrate that it works correctly for a
 #    location that is not in the data set. (Variable: `missing_summary`)
-missing_summary <- count_in_location("Nonexistent Location")
+missing_summary <- count_in_location(toupper("Nonexistent Location"))
 
 # 3i: Create a new vector `states` that holds the state locations, that is, the
 #    last two characters of each value in the `locations` vector. (Hint: You may
@@ -255,7 +255,7 @@ missing_summary <- count_in_location("Nonexistent Location")
 states <- str_sub(locations, -2, -1)
 
 # 3j: Create a vector of the unique states in your dataset. (Variable: `uniq_states`)
-uniq_states <- unique(states)
+uniq_states <- unique(toupper(states))
 
 # 3k: Create a summary sentence for each state by passing your `uniq_states`
 #    variable and `count_in_location` variables to the `sapply()` function.
