@@ -89,6 +89,15 @@ reflection prompt IDs (e.g., R1a, R2a, etc.).
       :smile: Good-luck!
 
 (_Updated: October 2022, Your Teaching Team_)
+**(R3a)**
+
+I think the number of protests in Washington surprises me a lot. Because it is really a large number compared to other states that have large populations but fewer protests number.
+
+**(R3b)**
+Using the sapply() function is surprised me since it is power to simplifies the process of applying a function to multiple elements by automatically iterating over the elements and returning the results as a vector or matrix. It saves me a lot  of time.
+
+* **(R3c)** ... (about 25-50 words)
+
 
 # 3. Critical Analysis & Reflection: After You Code
 
