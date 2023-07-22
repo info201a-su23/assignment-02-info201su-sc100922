@@ -545,9 +545,8 @@ filter_protests <- function(purpose = NULL, position_taken = NULL) {
 # 6b: Write the filter_and_report() function, as described above. Please comment 
 #    your function. (Variable: `filter_and_report`)
 filter_and_report <- function(purpose, position_taken=NULL) {
-  filtered_data <- filter_positions(purpose, position_taken)
-  report <- format_doc(filtered_data, purpose, position_taken)
-  
+  filtered_protests_df <- filter_positions(purpose, position_taken)
+  report <- format_doc(filtered_protests_df, purpose, position_taken)
   return(report)
 }
 
@@ -560,5 +559,5 @@ filter_and_report <- function(purpose, position_taken=NULL) {
 test_positions <- filter_positions("Civil Rights")
 print(head(test_positions))
 
-test_report <- filter_and_report("Civil Rights", "Against discrimination")
-cat(substr(test_report, 1, 1000))
+test_report <- filter_and_report(purpose="Environment", position_taken="Against noise")
+print(test_report)
