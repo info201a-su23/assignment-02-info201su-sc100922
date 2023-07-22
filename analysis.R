@@ -192,15 +192,15 @@ log_attendees_distribution <- boxplot(log(na.omit(num_attendees)), plot = TRUE)
 # In this part, you will explore where the protests happened.
 
 # 3a: Extract the `Location` column. (Variable: `locations`)
-locations <- toupper(protests$Location)
+locations <- protests$Location
 
 # 3b: How many *unique* locations are in the dataset? (Variable: `num_locations`)
-num_locations <- length(unique(locations, na.rm = TRUE))
+num_locations <- length(unique(toupper(locations)))
 
 # 3c: How many protests occurred in Washington State (WA)? (Hint: Use a function, 
 #    called str_detect(), from the stringr package (see https://stringr.tidyverse.org/), 
 #    to detect the presence (or absence) of WA".) (Variable: `num_in_wa`)
-num_in_wa <- sum(str_detect(locations, "WA"))
+num_in_wa <- length(locations[str_detect(locations, "WA")])
 
 # 3d: What proportion of protests occurred in Washington? (Variable: `prop_in_wa`)
 prop_in_wa <- num_in_wa / length(locations)
@@ -227,7 +227,8 @@ prop_in_wa <- num_in_wa / length(locations)
 #       2. You should count the number of locations that *match* the `location'
 #          parameter. For example, `Seattle` should be a match for "Seattle, WA". (Variable: `count_in_location`)
 count_in_location <- function(location) {
-  num_protests <- sum(str_detect(locations, location))
+  
+  num_protests <- length(locations[str_detect(locations, location)])
   
   if (num_protests > 0) {
     return(paste("There were", num_protests, "protests in", location, "."))
@@ -236,17 +237,15 @@ count_in_location <- function(location) {
   }
 }
 
-wa_summary <- count_in_location(toupper("Seattle, WA"))
-
 # 3f: Use your function above to compute the number of protests in "Washington, DC". (Variable: `dc_summary`)
-dc_summary <- count_in_location(toupper("Washington, DC"))
+dc_summary <- count_in_location("Washington, DC")
 
 # 3g: Use your function above to compute the number of protests in "Minneapolis". (Variable: `minneapolis_summary`)
-minneapolis_summary <- count_in_location(toupper("Minneapolis"))
+minneapolis_summary <- count_in_location("Minneapolis")
 
 # 3h: Use your function above to demonstrate that it works correctly for a
 #    location that is not in the data set. (Variable: `missing_summary`)
-missing_summary <- count_in_location(toupper("Nonexistent Location"))
+missing_summary <- count_in_location("Beijing")
 
 # 3i: Create a new vector `states` that holds the state locations, that is, the
 #    last two characters of each value in the `locations` vector. (Hint: You may
@@ -301,7 +300,7 @@ earliest <- min(dates)
 
 # 4d: What is the length of the time span of the dataset? (Hint: R can do math with
 #    dates pretty well by default!) (Variable: `time_span`)
-time_span <- length(most_recent - earliest)
+time_span <- most_recent - earliest
 
 # 4e: Create a vector of the dates that are in 2020. (Variable: `in_2020`)
 in_2020 <- dates[year(dates) == 2020]
