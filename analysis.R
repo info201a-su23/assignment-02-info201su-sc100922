@@ -534,18 +534,12 @@ write_report <- function(md_doc, fname="~/Documents/info201/reports/report.md") 
 
 # 6a: Write the filter_positions() function, as described above. Please comment 
 #    your function. (Variable: `filter_protests`)
-filter_positions <- function(purpose, position_taken=NULL) {
-  if (is.null(position_taken)) {
-    filtered_protests <- protests[protests$Purpose == purpose, ]
+filter_protests <- function(purpose = NULL, position_taken = NULL) {
+  if(is.null(position_taken)){
+    return(protests[grepl(purpose, protests$Tags), ])
+  }else {
+  return(protests[grepl(purpose, protests$Tags) & grepl(position_taken, protests$Taggs), ])
   }
-  else {
-    filtered_protests <- protests[protests$Purpose == purpose & protests$Position == position_taken, ]
-  }
-  if(nrow(filtered_protests) == 0){
-    print(paste("No protests found for the purpose: ", purpose, " with position: ", position_taken))
-    return(NULL)
-  }
-  return(filtered_protests)
 }
 
 # 6b: Write the filter_and_report() function, as described above. Please comment 
